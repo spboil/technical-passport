@@ -19,6 +19,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
+        <lombok.version>1.18.42</lombok.version>
         <keycloak.version>26.0.6</keycloak.version>
     </properties>
 
