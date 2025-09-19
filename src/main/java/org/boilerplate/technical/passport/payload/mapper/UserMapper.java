@@ -12,15 +12,31 @@ import lombok.NoArgsConstructor;
 public class UserMapper {
     
     public static UserRepresentation toUserRepresentation(UserCreateRequest request){
-        return null;
+        UserRepresentation user = new UserRepresentation();
+        user.setFirstName(request.firstName());
+        user.setLastName(request.lastName());
+        user.setEmail(request.email());
+        user.setUsername(request.username());
+        user.setEnabled(true);
+        return user;
     }
 
     public static UserRepresentation toUserRepresentation(UserUpdateRequest request){
-        return null;
+        UserRepresentation user = new UserRepresentation();
+        user.setFirstName(request.firstName());
+        user.setLastName(request.lastName());
+        user.setEmail(request.email());
+        return user;
     }
 
     public static UserResponse fromUserRepresentation(UserRepresentation user){
-        return null;
+        return new UserResponse(
+            user.getId(),
+            user.getUsername(),
+            user.getEmail(),
+            user.getFirstName(),
+            user.getLastName()
+        );
     }
 
 }

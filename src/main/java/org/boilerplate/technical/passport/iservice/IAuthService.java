@@ -8,8 +8,9 @@ import org.springframework.security.oauth2.jwt.Jwt;
 
 public interface IAuthService {
     JwtResponse authenticate(LoginRequest request);
+    JwtResponse refreshToken(String refreshToken);
     void register(UserCreateRequest request);
     UserResponse currentUser(Jwt jwt);
-    void logout();
+    void logout(String refreshToken);
     
 }

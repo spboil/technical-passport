@@ -10,12 +10,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RoleMapper {
     
-    public static RoleRepresentation toRoleRepresentation(RoleRequest response) {
-        return null;
+    public static RoleRepresentation toRoleRepresentation(RoleRequest request) {
+        RoleRepresentation role =  new RoleRepresentation();
+        role.setName(request.name());
+        role.setDescription(request.description());
+        return role;
     }
 
     public static RoleResponse toRoleResponse(RoleRepresentation roleRepresentation) {
-        return null;
+        return new RoleResponse(
+            roleRepresentation.getId(),
+            roleRepresentation.getName(),
+            roleRepresentation.getDescription()
+        );
     }
 
 }
